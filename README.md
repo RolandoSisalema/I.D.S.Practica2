@@ -1,5 +1,8 @@
  Practica 2 de In. Desarrollo Software
- 
+ INTEGRANTES:
+ 1.
+ 2.
+ 3.
  
  CREACION DEL SH
  
