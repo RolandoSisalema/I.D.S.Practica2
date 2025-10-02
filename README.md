@@ -36,6 +36,8 @@
 - Maneja errores en el envío
   - print(f"Error al enviar el correo: {e}")
     - return "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+
+ESTO ES NUESTRO PROYECTO
     
 
 
