@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %} INSCRIPCIONES {% endblock %}
+{% block content %}
+<h2> Formulario de inscripcion</h2>
+<form action="{{ url_for ( 'registration')}}" method="POST">
+    <div class="form-group">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div class="form_gropu">
+        <label for="correo">Correo Electronico: </label>
+        <input type="email" id="correo" name="correo" required>
+
+    </div>
+    <div class="form-group">
+        <label for="modalidad">Modalidad y Costo: </label>
+        <select id="modalidad" name="modalidad" required>
+            {% for modalidad_id, modalidad_data in info_evento.modalidad_costo.items() %}
+            <option value="{{ modalidad_data.nombre }}"> {{ modalidad_data.nombre }} (${{
+                modalidad_data.valor_de_inscripcion }})
+
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit"> ENVIAR REGISTRO</button>
+</form>
+<section>
+    <div class="imagen-registrar">
+        <img src="{{ url_for ('static', filename='images/evento6.jpg') }}" alt="imagen" width="400" , height="400">
+        <img src="{{ url_for ('static', filename='images/evento7.jpeg') }}" alt="imagen" width="400" , height="400">
+    </div>
+</section>
+<p>
+    "Un viaje de mil millas comienza con un solo paso.” – Lao Tzu. <br> Todo logro significativo comienza
+    con una pequeña acción inicial. No te dejes abrumar por la magnitud de la tarea; concéntrate en dar ese primer
+    paso.<br>La constancia en las pequeñas acciones es clave para lograr resultados significativos a largo plazo.
+</p>
+
+<section>
+    <h3>AGRADECEMOS A LOS AUSPICIANTES QUE HICIERON POSIBLE EL EVENTO</h3>
+    <div class="patrocinadores">
+        <img src="{{ url_for ('static', filename='images/Auspiciante1.jpeg') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante2.png') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante3.png') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante4.png') }}" alt=patrocinador width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante5.jpeg') }}" alt="patrocinador" width="150 "
+            height="55">
+    </div>
+</section>
+{% endblock %}

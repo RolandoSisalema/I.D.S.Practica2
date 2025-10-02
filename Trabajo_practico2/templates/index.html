@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %} Club Social y Deportivo Unidos {% endblock %}
+{% block content %}
+<h1>{{ info_evento.nombre }}</h1>
+<p> organizado por {{ info_evento.organizador }}</p>
+<p> Tienes que saber que la {{ info_evento.descripcion }}</p>
+<section>
+    <h3> Te cuento los detalles del evento</h3>
+    <p> El evento se realizara ek dia: {{ info_evento.fecha }}</p>
+    <p> la misma comenzara a la hora: {{ info_evento.hora }}</p>
+    <p> este evento se realizara en la provincia de: {{ info_evento.lugar }}</p>
+    <P> el tipo de carrera que realizaremos es: {{ info_evento.tipo_carrera }}</P>
+
+</section>
+<section>
+    <h3> Contamos con diferentes tipos de modalidad y costo</h3>
+    {% for modalidad_id, modalidad_data in info_evento.modalidad_costo.items() %}
+    <p> las modalidades que te ofrecemos son: {{ modalidad_data.nombre }}: ${{ modalidad_data.valor_de_inscripcion }}
+    </p>
+    {% endfor %}
+</section>
+<a href="{{ url_for ( 'static', filename='documentos/Reglamento-de-Ciclismo.pdf') }}">link para que puedas leer los
+    reglamentos reglamento.pdf</a>
+<section>
+    <div class='mapa-recorrido'>
+        <h3>Mapa provincia de Tandil </h3>
+        <iframe
+            src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.176472099351!2d-59.13838428468798!3d-37.31976697984852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911da2b3433555%3A0x6a0531e245a4a9c!2sTandil%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1631557088909!5m2!1ses-419!2sar"
+            width="500" height="500" style="border: 10; " loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="puntos-hidratacion">
+        <h3> Puntos de hidracion</h3>
+        <iframe
+            src=" https://www.google.com/maps/embed?pb=!1m36!1m8!1m3!1d101502.98637215408!2d-59.1671609!3d-37.3432586!3m2!1i1024!2i768!4f13.1!4m25!3e1!4m3!3m2!1d-37.3731741!2d-59.1147761!4m3!3m2!1d-37.3432738!2d-59.1272435!4m5!1s0x95911f4adc2990d5%3A0xdfba2de2b65edbaf!2sTandil%2C%20B7000%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-37.3464841!2d-59.194430499999996!4m5!1s0x959121f198d90207%3A0xd5f7bf4b0d430496!2sJos%C3%A9%20Cabral%202555%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-37.2953737!2d-59.1721192!4m3!3m2!1d-37.329287!2d-59.096476599999995!5e0!3m2!1ses-419!2sar!4v1758394499978!5m2!1ses-419!2sar"
+            width="700" height="600" style="border: 10;" loading="lazy">
+        </iframe>
+    </div>
+
+
+    <p>El punto de inicio sera en ceretos (Cereseto S.a., Olmos 585, B7100 Dolores,
+        Provincia de Buenos Aires) <br>
+        El primer punto de hifratacion es en Doctor ozwaldo Zarini (Dr. Osvaldo Zarini, B7000 Tandil, Provincia de
+        Buenos Aires),<br>
+        El segundo punto de hidratacion sera en Tandil(Tandil, Provincia de Buenos Aires),<br>
+        El tercer punto de hidratacion sera en Jose Cabral 2555 (José Cabral 2555, B7000 Tandil, Provincia de Buenos
+        Aires)<br>
+        Ter minando la carrera en Carlos Linstonw 798 (Carlos Linstow 798, B7000 Tandil, Provincia de Buenos Aires)</p>
+
+
+</section>
+<section>
+    <h3> Se parte del evento Rally MTB 2025</h3>
+    <div class="seccion-imagen">
+
+        <img src="{{ url_for ('static', filename='images/evento1.jpeg') }}" alt="seccion" width="300" height="300">
+        <img src="{{ url_for ('static', filename='images/evento3.jpeg') }}" alt="seccion" width="300" height="300">
+        <img src="{{ url_for ('static', filename='images/evento4.jpeg') }}" alt="seccion" width="300" height="300">
+    </div>
+
+    <p>
+        Estamos comprometidos en fortalecer los protocolos y medidas de seguridad para garantizar el cuidado<br>
+        detodoslos competidores.<br>
+        el compromiso deportivo implica un constructo complejo, dado que se compone de distintos conceptos
+        que<br>
+        permiten comprender las distintas experiencias deportivas bajo un enfoque positivo para los
+        jugadores.<br>
+        Quedó evidenciado que, a mayor compromiso, menor es la posibilidad de abandono del deporte
+        practicado,<br>
+        así como su vinculación con la motivación.<br>
+
+        Un abordaje desde la psicología del deporte resulta ser un factor clave con miras a potenciar tanto
+        la<br>
+        adherencia como la constancia de los deportistas en la práctica del deporte elegido. En este
+        sentido,<br>
+        la psicoeducación de los padres y entrenadores resulta ser un desafío importante. Para quienes estén<br>
+        interesados en profundizar en este campo, el curso sobre psicología deportiva puede ofrecer una
+        comprensión<br>
+        más profunda y estrategias específicas para mejorar el rendimiento y el bienestar de los
+        deportistas.<br>
+    </p>
+
+</section>
+<section>
+    <div class="extras">
+        <img src="{{ url_for ('static', filename='images/evento2.jpeg') }}" alt="extras" width="500" height="400">
+        <img src="{{ url_for ('static', filename='images/evento5.jpeg') }}" alt="extras" width="500" height="400">
+    </div>
+    <p>
+        El club Social y Deportivo Unidos por el Deporte que se organiza e implementa de acuerdo a criterios muy
+        cuidados de sustentabilidad
+
+        A nivel deportivo, el compromiso es una variable psicológica fundamental que actúa como un factor determinante
+        en el rendimiento de un atleta, tanto cuando está presente como cuando no lo está.
+    </p>
+</section>
+<section>
+    <h3> Necesitas saber las reglas de nuestro evento </h3>
+    <p>
+        Cuando el riesgo es debido sólo a factores extrínsecos, es lícita toda actividad deportiva mientras se pongan en
+        conocimiento, antes, durante y después del desarrollo de tal actividad, todas las medidas conducentes y capaces
+        de reducir el riesgo al mínimo posible, hasta el punto de dejar subsistir sólo un cierto riesgo dependiente de
+        factores incidentales imprevisibles.
+    </p>
+    <h4> RECOMENDACIONES Y SUGERENCIAS.</h4>
+    <p>
+        1. EXAMEN MÉDICO PRE-PARTICIPATIVO.<br>
+        Previo a una actividad física organizada, la salud debe ser evaluada por personal médico calificado. Este examen
+        debe
+        determinar si el/la atleta está médicamente apto/a para la práctica de un deporte o actividad física.
+        <br>2. SEGURO DE SALUD.<br>
+        Es recomendable que cada atleta o deportista deba estar cubierto/a en forma individual, familiar o institucional
+        por
+        un
+        seguro médico para afrontar costos eventuales en salud.
+        <br>3. ACEPTACIÓN DEL RIESGO.<br>
+        Es la conformidad por parte del/la atleta de realizar actividad física y deportiva habiendo recibido toda la
+        información
+        necesaria respecto del riesgo que ello significa y así poder tomar una decisión libre e inteligente.
+        <br>4. PLANIFICACIÓN - SUPERVISIÓN.<br>
+        La seguridad en la actividad física y deportiva puede ser lograda solo con una apropiada planificación y
+        supervisión
+        de
+        los organizadores de la misma.
+        <br>5. OBLIGACIONES LEGALES.<br>
+        Debe ser una responsabilidad compartida entre los organizadores y los/as jugadores/as, padres/madres, tutores/as
+        o
+        responsables legales. Cada parte involucrada debe asumir el compromiso de minimizar los riesgos.
+        <br>6. INFRAESTRUCTURA.<br>
+        Supervisar las condiciones y adecuación de lugares e instalaciones para la práctica de básquet y las
+        competencias deportivas. Puedes descargar los reglamentos de nuestro evento que esta aqui, en formato PDF
+        <a href="{{ url_for ( 'descargar_regla') }}"> DESCARGAR-REGLAMENTO.pdf</a>
+    </p>
+
+    <p>¡ATENCION!<br> Los riesgos se consideran debidos a factores extrínsecos, cuando no están en la intención misma de
+        tal o cual deporte ni siguen a la práctica del mismo. Por ejemplo, el riesgo que depende de situaciones
+        climáticas adversas,
+        desperfectos en equipamiento, fallas de infraestructura o del ejercicio de ese deporte más allá de los límites
+        normales. Este
+        tipo de riesgos extrínsecos, a su vez, habrá que ver si son previsibles o no, y si son graves o leves. Dentro de
+        esta
+        categoría está comprendido el ciclismo . Descraga e imprime y llena con tus datos el siguiente deslinde de
+        responsabilidad <a href="{{ url_for ( 'descarga_deslinde') }}"> Deslinde de responsabilidad.pdf</a>
+        - No olvides llevarlo el dia del evento y entregarlo al organizador</p>
+</section>
+<section>
+    <h3>AGRADECEMOS A LOS AUSPICIANTES QUE HICIERON POSIBLE EL EVENTO</h3>
+    <div class="patrocinadores">
+        <img src="{{ url_for ('static', filename='images/Auspiciante1.jpeg') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante2.png') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante3.png') }}" alt="patrocinador" width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante4.png') }}" alt=patrocinador width="150 "
+            height="55">
+        <img src="{{ url_for ('static', filename='images/Auspiciante5.jpeg') }}" alt="patrocinador" width="150 "
+            height="55">
+    </div>
+</section>
+
+<a href="{{ url_for('registration') }}"> ¡INSCRIBETE AHORA! </a><br>
+{% endblock %}

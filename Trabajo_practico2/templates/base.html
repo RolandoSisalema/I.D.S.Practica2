@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <nav>
+                <li><a href="{{ url_for('index') }}"> <button type="button">INICIO </button> </a></li>
+                <li><a href="{{ url_for('registration') }}"> <button type="button"> Inscripciones Abierta</button> </a>
+                </li>
+
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <section>
+        <div class="footer">
+            <footer>
+
+                <br>club Social Unidos por el Deporte 2025<br>
+                contactanos: mtbciclismo866@gmail.com<br>
+                WathsApp: 11859669--<br>
+            </footer>
+        </div>
+    </section>
+</body>
+
+</html>

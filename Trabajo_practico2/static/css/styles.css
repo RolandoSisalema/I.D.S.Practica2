@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2.5;
+    margin: 900;
+    padding: 850;
+    background-color: #258ab3;
+    /* Fondo claro */
+    color: #e4e4ec;
+}
+
+/* Contenedor principal para centrar el contenido */
+main {
+    max-width: 30;
+    margin: 30;
+    padding: 30;
+    background-color: #2286b4;
+    box-shadow: 10 10 10 rgba(224, 6, 6, 0.911);
+}
+
+footer {
+    /*pie de pagina*/
+    text-align: center;
+    padding: 30;
+    background-color: #030303;
+    color: rgb(233, 224, 224);
+    margin-top: 20;
+
+
+}
+
+h1 {
+    text-align: center;
+    font-family: arial;
+    color: #e90b0b
+}
+
+p {
+    text-align: left;
+    color: #ecece7;
+    margin-left: 400px;
+    margin-right: 300px;
+}
+
+h2,
+h3,
+h4 {
+    text-align: center;
+    color: #0a0a0a;
+    /* Usa el color principal del club */
+    border-bottom: 400 solid #e5e7ec;
+    padding-bottom: 15;
+
+
+}
+
+a {
+    display: grid;
+    place-items: center;
+    height: 25px;
+}
+
+.mapa-recorrido {
+    display: grid;
+    place-items: center;
+
+}
+
+.puntos-hidratacion {
+    display: grid;
+    place-items: center;
+
+
+}
+
+.patrocinadores {
+    text-align: center;
+
+}
+
+.seccion-imagen {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.seccion-imagen {
+    text-align: center;
+}
+
+.extras {
+    text-align: center;
+}
+
+
+
+.imagen-registrar {
+    text-align: center;
+    margin-top: auto;
+}
+
+button {
+    color: antiquewhite;
+    background-color: #030303;
+    border-color: #e90b0b;
+    margin: 10;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 50px;
+    padding: 100;
+    background-color: #b7dcec;
+    color: rgb(230, 13, 13);
+    margin-top: 50;
+    ;
+}
